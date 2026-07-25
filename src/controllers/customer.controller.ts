@@ -1,5 +1,6 @@
 import type { Request, Response } from 'express';
 import * as CustomerService from '../services/customer.service.ts';
+import type { CreateCustomer } from '../types.ts';
 
 export function getAllCustomers(
     _request: Request,
@@ -10,7 +11,7 @@ export function getAllCustomers(
     response.status(200).json(customers);
 }
 
-export function getById(
+export function getCustomerById(
     request: Request,
     response: Response
 ): void {
@@ -19,4 +20,15 @@ export function getById(
     const customer = CustomerService.findCustomerById(id);
 
     response.status(200).json(customer);
+}
+
+export function createCustomer(
+    request: Request,
+    response: Response
+): void {
+    const { name } = request.body as CreateCustomer;
+
+    const customer = CustomerService.insertCustomer(name);
+
+    response.status(201).json(customer);
 }
