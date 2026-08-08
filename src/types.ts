@@ -3,3 +3,8 @@ export type Customer = {
     name: string;
     status: boolean;
 }
+
+export type ValidationFieldError = {
+    field: string;
+    message: string;
+}
