@@ -6,11 +6,7 @@ export const createCustomerSchema = z.object({
   imageUrl: z.url().optional()
 });
 
-export const updateCustomerSchema = z.object({
-  name: z.string().min(1).optional(),
-  email: z.email().optional(),
-  imageUrl: z.url().optional()
-});
+export const updateCustomerSchema = createCustomerSchema.partial();
 
 export type CreateCustomer = z.infer<typeof createCustomerSchema>;
 export type UpdateCustomer = z.infer<typeof updateCustomerSchema>;

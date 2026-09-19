@@ -6,6 +6,19 @@ export type Customer = {
     createdAt: Date;
 }
 
+type InvoiceStatus = 'PENDING' | 'PAID';
+
+export type Invoice = {
+    id: number;
+    amount: number;
+    status: InvoiceStatus;
+    date: Date;
+    customerId: number;
+    createdAt: Date;
+}
+
+export type Page = { page: number }
+
 export type ValidationFieldError = {
     field: string;
     message: string;
