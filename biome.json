@@ -1,18 +1,9 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.5.3/schema.json",
-	"vcs": {
-		"enabled": true,
-		"clientKind": "git",
-		"useIgnoreFile": true
-	},
-	"files": {
-		"ignoreUnknown": true,
-		"includes": ["**/*.ts"]
-	},
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab",
-		"indentWidth": 4,
+		"indentWidth": 2,
 		"lineWidth": 80
 	},
 	"linter": {
@@ -27,12 +18,7 @@
 			"semicolons": "always"
 		}
 	},
-	"assist": {
-		"enabled": true,
-		"actions": {
-			"source": {
-				"organizeImports": "on"
-			}
-		}
+	"files": {
+		"ignoreUnknown": true
 	}
 }
